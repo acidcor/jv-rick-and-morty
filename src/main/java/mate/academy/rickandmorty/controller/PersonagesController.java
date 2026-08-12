@@ -24,7 +24,7 @@ public class PersonagesController {
     }
 
     @Operation(summary = "Return a page of all characters whose name contains the search string")
-    @GetMapping("{name}")
+    @GetMapping("search/{name}")
     public Page<PersonageDto> findByName(Pageable pageable, @PathVariable String name) {
         return personageService.findByName(pageable, name);
     }
